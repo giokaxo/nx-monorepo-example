@@ -12,3 +12,5 @@ export const isEven6 = (x: number) => x % 2 == 0;
 
 export const isEven7 = (x: number) => x % 2 == 0;
 
+export const isEven8 = (x: number) => x % 2 == 0;
+
