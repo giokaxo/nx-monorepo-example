@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@weetbix/is-even': workspace:*
+  '@giokaxo/is-even': workspace:*
 
 importers:
 
@@ -34,7 +34,7 @@ importers:
 
   packages/is-odd:
     devDependencies:
-      '@weetbix/is-even':
+      '@giokaxo/is-even':
         specifier: workspace:*
         version: link:../is-even
 

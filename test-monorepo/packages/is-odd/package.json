@@ -1,5 +1,5 @@
 {
-  "name": "@weetbix/is-odd",
+  "name": "@giokaxo/is-odd",
   "version": "0.0.0",
   "main": "dist/index.js",
   "private": false,
@@ -8,7 +8,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@weetbix/is-even": "*"
+    "@giokaxo/is-even": "*"
   },
   "scripts": {
     "build": "tsc index.ts --outDir dist"

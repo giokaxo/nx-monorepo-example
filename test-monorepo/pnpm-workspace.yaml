@@ -7,4 +7,4 @@ linkWorkspacePackages: true
 onlyBuiltDependencies:
   - nx
 overrides:
-  '@weetbix/is-even': workspace:*
+  '@giokaxo/is-even': workspace:*

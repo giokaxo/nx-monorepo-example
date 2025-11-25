@@ -1,4 +1,4 @@
-import { isEven } from "@weetbix/is-even";
+import { isEven } from "@giokaxo/is-even";
 
 export const isOdd = (x: number) => x % 2 !== 0;
 
