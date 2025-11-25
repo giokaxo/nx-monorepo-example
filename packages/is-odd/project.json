@@ -13,7 +13,7 @@
             {
               "prepareCmd": "npm version ${nextRelease.version} --no-git-tag-version --workspaces-update=false",
               "publishCmd": "pnpm publish --no-git-checks",
-              "execCwd": "${PROJECT_DIR}/packages/is-odd"
+              "execCwd": "./packages/is-odd"
             }
           ]
         ]
