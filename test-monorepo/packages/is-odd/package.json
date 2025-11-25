@@ -2,6 +2,9 @@
   "name": "@giokaxo/is-odd",
   "version": "0.0.0",
   "main": "dist/index.js",
+  "repository": {
+    "url": "https://github.com/giokaxo/nx-monorepo-example"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
