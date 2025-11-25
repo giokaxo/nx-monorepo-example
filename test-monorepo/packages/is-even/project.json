@@ -11,8 +11,8 @@
           [
             "@semantic-release/exec",
             {
-              "prepareCmd": "npx pnpm version ${nextRelease.version} --git-tag-version=false",
-              "publishCmd": "npx pnpm publish --no-git-checks",
+              "prepareCmd": "npm version ${nextRelease.version} --no-git-tag-version --workspaces-update=false",
+              "publishCmd": "pnpm publish --no-git-checks",
               "execCwd": "./packages/is-even"
             }
           ]
