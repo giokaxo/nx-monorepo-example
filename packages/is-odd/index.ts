@@ -11,3 +11,5 @@ export const isOdd4 = (x: number) => x % 2 !== 0;
 export const isOdd5 = (x: number) => x % 2 !== 0;
 
 export const isOdd6 = (x: number) => x % 2 !== 0;
+
+export const isOdd7 = (x: number) => x % 2 !== 0;
