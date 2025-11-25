@@ -39,8 +39,7 @@
               "publishCmd": "node ../publish-to-s3.js ${nextRelease.version} ./dist/index.min.js main.js is-odd",
               "execCwd": "${PROJECT_DIR}"
             }
-          ],
-          "@rebilly/semantic-release-slack-plugin"
+          ]
         ]
       }
     }

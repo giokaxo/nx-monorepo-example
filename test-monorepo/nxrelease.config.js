@@ -39,6 +39,5 @@ module.exports = {
         publishCmd: 'pnpm publish --no-git-checks',
       },
     ],
-    '@rebilly/semantic-release-slack-plugin'
   ],
 };
