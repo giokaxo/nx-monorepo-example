@@ -3,7 +3,6 @@ import { execSync, spawn } from 'child_process';
 import type { Context, Config, Release } from 'semantic-release';
 import { join } from 'path';
 
-console.log('tst')
 // Add releases item to the context, since I know it exists
 interface ExtendedContext extends Context {
   releases: Release[];
