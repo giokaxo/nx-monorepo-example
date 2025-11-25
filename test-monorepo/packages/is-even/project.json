@@ -1,0 +1,22 @@
+{
+  "name": "is-even",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/is-even",
+  "projectType": "library",
+  "targets": {
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "plugins": [
+          [
+            "@semantic-release/exec",
+            {
+              "prepareCmd": "pnpm version ${nextRelease.version} --git-tag-version=false",
+              "publishCmd": "pnpm publish --no-git-checks"
+            }
+          ]
+        ]
+      }
+    }
+  }
+}

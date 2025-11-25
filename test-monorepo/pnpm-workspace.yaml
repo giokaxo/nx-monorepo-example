@@ -1,0 +1,10 @@
+packages:
+  - packages/**
+ignoredBuiltDependencies:
+  - aws-sdk
+  - es5-ext
+linkWorkspacePackages: true
+onlyBuiltDependencies:
+  - nx
+overrides:
+  '@weetbix/is-even': workspace:*

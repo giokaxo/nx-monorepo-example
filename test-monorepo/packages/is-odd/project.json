@@ -1,0 +1,48 @@
+{
+  "name": "is-odd",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/is-odd",
+  "projectType": "library",
+  "targets": {
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "plugins": [
+          [
+            "@semantic-release/exec",
+            {
+              "prepareCmd": "pnpm version ${nextRelease.version} --git-tag-version=false",
+              "publishCmd": "pnpm publish --no-git-checks"
+            }
+          ],
+          [
+            "@rebilly/semantic-release-amplify-plugin",
+            {
+              "amplifyProject": {
+                "name": "is-odd",
+                "id": "abcdefghijkl"
+              }
+            }
+          ],
+          [
+            "@rebilly/semantic-release-amplify-plugin",
+            {
+              "amplifyProject": {
+                "name": "is-odd-whitelabel",
+                "id": "mnopqrstuvwxyz"
+              }
+            }
+          ],
+          [
+            "@semantic-release/exec",
+            {
+              "publishCmd": "node ../publish-to-s3.js ${nextRelease.version} ./dist/index.min.js main.js is-odd",
+              "execCwd": "${PROJECT_DIR}"
+            }
+          ],
+          "@rebilly/semantic-release-slack-plugin"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+name: default
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        # Set working directory to /test-monorepo folder for all 'run' commands.
+        # Commands using 'uses' will need options passed in.
+        working-directory: ./test-monorepo
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GIT_USER_PAT }}
+
+      - name: configure git
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+        with:
+          version: 10.10.0
+          package_json_file: test-monorepo/package.json
+
+      - uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
+        with:
+          node-version: 22.11.0
+          cache: "pnpm"
+          cache-dependency-path: "test-monorepo"
+
+      - run: pnpm install
+
+      - run: pnpm nx run-many --target=semantic-release --parallel=false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_RELEASE_CHANNEL_ID: ${{ secrets.SLACK_RELEASE_CHANNEL_ID }}
