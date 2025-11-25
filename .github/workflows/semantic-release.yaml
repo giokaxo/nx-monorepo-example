@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      id-token: write
     defaults:
       run:
         # Set working directory to /test-monorepo folder for all 'run' commands.
@@ -34,8 +35,8 @@ jobs:
       - uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
         with:
           node-version: 22.11.0
-          cache: "pnpm"
-          cache-dependency-path: "test-monorepo"
+          cache: 'pnpm'
+          cache-dependency-path: 'test-monorepo'
 
       - run: pnpm install
 
