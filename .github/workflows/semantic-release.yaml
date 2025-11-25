@@ -40,6 +40,11 @@ jobs:
 
       - run: pnpm install
 
+      - name: Setup npm authentication
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
       - run: pnpm nx run-many --target=semantic-release --parallel=false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
