@@ -3,7 +3,7 @@ module.exports = {
   npm: false,
   github: false,
   git: false,
-  repositoryUrl: 'https://github.com/Weetbix/nx-monorepo-example',
+  repositoryUrl: 'https://github.com/giokaxo/nx-monorepo-example',
   branches: ['main'],
   presetConfig: {
     types: [
