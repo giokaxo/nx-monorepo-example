@@ -12,7 +12,8 @@
             "@semantic-release/exec",
             {
               "prepareCmd": "npm version ${nextRelease.version} --no-git-tag-version --workspaces-update=false",
-              "publishCmd": "pnpm publish --no-git-checks"
+              "publishCmd": "pnpm publish --no-git-checks",
+              "execCwd": "./packages/is-odd"
             }
           ]
         ]
